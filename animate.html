@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		div {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: red;
+				position: absolute;
+				left:200px;
+				top:0px;
+				-webkit-animation: myfirst 5s 2; 
+				-webkit-animation-direction: reverse;
+				animation: myfirst 5s 2;
+				animation-direction: reverse;
+			}
+			@-webkit-keyframes myfirst {
+				100%   {background: red; left: 0px; top: 200px;}
+				75%  {background: yellow; left: 0px; top: 100px;}
+				50%  {background: blue; left: 200px; top: 100px;}
+				25%  {background: green; left: 200px; top: 0px;}
+				0% {background: red; left: 200px; top: 0px;}
+			}
+
+			@keyframes myfirst {
+				100%   {background: red; left: 0px; top: 200px;}
+				75%  {background: yellow; left: 0px; top: 100px;}
+				50%  {background: blue; left: 200px; top: 100px;}
+				25%  {background: green; left: 200px; top: 0px;}
+				0% {background: red; left: 200px; top: 0px;}
+			}
+			svg{
+				position:absolute;
+				top:200px;
+				left:300px;
+			}
+	</style>
+	<body>
+		<button onclick="myMove()">Click Me</button>
+		<p id="sample"></p>
+		<div></div>
+		<svg width="500px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<circle id="circle" cx="100px" cy="100px" r="20px"  />
+		</svg>
+		<script>
+			function myMove() {
+				var dir="Go straight take right then take left";
+				var res=dir.split(" ");
+				console.log(res);
+				var i=0;
+				console.log(res.length);
+				for(i=0;i<res.length;i++){
+					if(res[i]=="straight")
+					{
+							var objCircle = document.getElementById("circle");
+							var intCY = parseInt(objCircle.getAttribute('cy'));
+							objCircle.setAttribute('cy', intCY + (-30) + 'px');
+					}
+					else if(res[i]=="left"){	
+						console.log(res[i]);
+						var objCircle = document.getElementById("circle");
+						var intCX = parseInt(objCircle.getAttribute('cx'));
+						objCircle.setAttribute('cx', intCX + (-30) + 'px');
+						
+					}
+					else if(res[i]=="right")
+					{
+						console.log(res[i]);
+						var objCircle = document.getElementById("circle");
+						var intCX = parseInt(objCircle.getAttribute('cx'));
+						objCircle.setAttribute('cx', intCY + (30) + 'px');
+
+					}
+					else
+						console.log("hi");	
+				}
+			
+			}
+					</script>
+
+	</body>
+</html>

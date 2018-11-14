@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		* {box-sizing: border-box}
+		body {font-family: "Lato", sans-serif;}
+
+		/* Style the tab */
+		.tab {
+			float: left;
+			color:white;
+			border: 1px solid #ccc;
+			background-color: green;
+			width: 20%;
+			height: 650px;
+		}
+
+		/* Style the buttons inside the tab */
+		.tab button {
+			display: block;
+			background-color: inherit;
+			color: white;
+			padding: 22px 16px;
+			width: 100%;
+			border: none;
+			outline: none;
+			text-align: left;
+			cursor: pointer;
+			font-size: 20px;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+			background-color: #ddd;
+		}
+
+		/* Create an active/current "tab button" class */
+		.tab button.active {
+			background-color: #ccc;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+			float: left;
+			padding: 0px 12px;
+			border: 1px solid #ccc;
+			width: 80%;
+			border-left: none;
+			height: 650px;
+			display: none;
+		}
+
+		/* Clear floats after the tab */
+		.clearfix::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+		h2{
+			font-size:25px;
+			font-family:Georgia;
+		}
+		</style>
+	</head>
+	<body>
+	<div class="tab">
+		<h2>Product Operations</h2>
+		<button class="tablinks" onclick="product_Op(event, 'add')">Add</button>
+		<button class="tablinks" onclick="product_Op(event, 'remove')">Remove</button>
+		<button class="tablinks" onclick="product_Op(event, 'update')">Update Details</button>
+		<button class="tablinks" onclick="product_Op(event, 'booking')">View Bookings</button>
+		<button class="tablinks" onclick="product_Op(event, 'feedback')">Feedback from Customer</button>
+		<button class="tablinks" onclick="logout()">Log Out</button>
+	</div>
+
+	<div id="add" class="tabcontent">
+	  <iframe src="add_product.html" height="100%" width="100%"></iframe>
+	  
+	</div>
+
+	<div id="remove" class="tabcontent">
+	  <iframe src="delete_product.html" height="100%" width="100%"></iframe>
+	</div>
+
+	<div id="update" class="tabcontent">
+	  <iframe src="update_product.html" height="100%" width="100%"></iframe>
+	</div>
+	
+	<div id="booking" class="tabcontent">
+	  <iframe src="view_book.php" height="100%" width="100%"></iframe>
+	</div>
+
+	<div id="feedback" class="tabcontent">
+	  <iframe src="feedback.php" height="100%" width="100%"></iframe>
+	</div>
+
+	<script>
+	function product_Op(evt, op_Name) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		}
+		document.getElementById(op_Name).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+	
+	function logout()
+	{
+		alert('Logged Out Successfully!!');
+		window.location.href='login.html';
+	}
+	</script>
+     
+</body>
+</html> 

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+				body {
+					font-family: Arial, Helvetica, sans-serif;
+				}
+
+				* {
+					box-sizing: border-box;
+				}
+
+				input[type=text], select, textarea {
+					width: 100%;
+					padding: 12px;
+					border: 1px solid #ccc;
+					border-radius: 4px;
+					box-sizing: border-box;
+					margin-top: 6px;
+					margin-bottom: 16px;
+					resize: vertical;
+				}
+
+				input[type=submit] {
+					background-color: #4CAF50;
+					color: white;
+					padding: 12px 20px;
+					border: none;
+					border-radius: 4px;
+					cursor: pointer;
+				}
+
+				input[type=submit]:hover {
+					background-color: #45a049;
+				}
+
+				.container {
+					border-radius: 5px;
+					background-color: #f2f2f2;
+					padding: 20px;
+				}
+
+				.column {
+					float: left;
+					padding: 10px;
+					height: 300px;
+				}
+
+				.left {
+					width: 60%;
+				}
+
+				.right {
+					width: 40%;
+				}
+
+				.row:after {
+					content: "";
+					display: table;
+					clear: both;
+				}
+				h1{
+					text-align:center;
+					font-family:Comic Sans MS;
+					font-size:20pt;
+				}
+				ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #333;
+				}
+
+				li {
+					float: left;
+				}
+
+				li a {
+					display: block;
+					color: white;
+					text-align: center;
+					padding: 14px 16px;
+					text-decoration: none;
+				}
+
+				li a:hover:not(.active) {
+					background-color: #111;
+				}
+
+				.active {
+					background-color: #4CAF50;
+				}
+		</style>
+	</head>
+	<body>
+	<ul>
+		<li style="float:right"><a href="#contact">HELP</a></li>
+		<li style="float:right"><a class="active" href="login.html">HOME</a></li>
+	</ul>
+		<h1>CONTACT US</h1>
+		<div class="row">
+			<div class="column left">
+				<div class="container">
+					<form action="contact_us.php" method="POST">
+						<label for="name">YOUR NAME</label> 
+						<input type="text" id="name" name="name" placeholder="Your name.." required> 
+						<label for="mail">YOUR EMAIL ID</label> 
+						<input type="text" id="mail" name="mail" placeholder="Your mail id.." required>
+						<label for="mail">SUBJECT</label> 
+						<input type="text" id="sub" name="sub">
+						<label for="subject">YOUR MESSAGE</label>
+						<textarea id="msg" name="msg" placeholder="Write your message.." style="height: 200px"></textarea>
+						<input type="submit" value="SEND">
+					</form>
+				</div>
+			</div>
+		<div class="column right" align="right">
+			<p style="color:red;font-size:16px;font-family:Comic Sans MS">EMAIL</p>
+			<p>myshop25@gmail.com</p>
+			<hr align="right" width="50%">
+			<p style="color:red;font-size:16px;font-family:Comic Sans MS">Phone</p>
+			<p>8976456012</p>
+			<p>080-298764</p>
+			<hr align="right" width="50%">
+			<p style="color:red;font-size:16px;font-family:Comic Sans MS">FACEBOOK</p>
+			<p>facebook.com/MyShop</p>
+			<hr align="right" width="50%">
+			<p style="color:red;font-size:16px;font-family:Comic Sans MS">WEBSITE</p>
+			<p>www.myshop.com</p>
+			<hr align="right" width="50%">
+		</div>
+	</div>
+</body>
+</html>
